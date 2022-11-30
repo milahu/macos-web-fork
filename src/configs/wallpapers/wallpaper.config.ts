@@ -27,14 +27,14 @@ const createWallpapersConfig = <TConfig = string>(
     const wallpaper = wallpaperConfig[wallpaperName as keyof TConfig];
 
     wallpaper.thumbnail = (
-      optimizedWallpapersArr.find(([path]) => path.includes(config.thumbnail))[1] as any
-    ).default;
+      (optimizedWallpapersArr.find(([path]) => path.includes(config.thumbnail)) || [])[1] as any
+    )?.default;
 
     if (wallpaper.type !== 'standalone') {
       for (const [time, imgName] of Object.entries(config.timestamps.wallpaper)) {
         wallpaper.timestamps.wallpaper[time] = (
-          optimizedWallpapersArr.find(([path]) => path.includes(imgName))[1] as any
-        ).default;
+          (optimizedWallpapersArr.find(([path]) => path.includes(imgName)) || [])[1] as any
+        )?.default;
       }
     }
   }
