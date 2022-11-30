@@ -1,4 +1,5 @@
-<script lang="ts">
+<script lang="ts">console.log(`src/components/Desktop/BootupScreen.svelte - line 1`)
+
   import { onMount } from 'svelte';
   import { quintInOut } from 'svelte/easing';
   import { tweened } from 'svelte/motion';
@@ -6,6 +7,7 @@
   import { fadeOut } from '$src/helpers/fade';
   import { waitFor } from '$src/helpers/wait-for';
   import AppleIcon from '~icons/mdi/apple';
+console.log(`src/components/Desktop/BootupScreen.svelte - line 10`)
 
   let hiddenSplashScreen = false;
   let progressVal = tweened(100, { duration: 3000, easing: quintInOut });
@@ -15,6 +17,17 @@
     await waitFor(3000);
     hiddenSplashScreen = true;
   });
+console.log(`src/components/Desktop/BootupScreen.svelte - line 20`)
+
+
+
+
+
+
+
+
+
+console.log(`src/components/Desktop/BootupScreen.svelte - line 30`)
 </script>
 
 {#if !(hiddenSplashScreen || import.meta.env.DEV)}

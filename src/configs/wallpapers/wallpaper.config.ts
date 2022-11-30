@@ -1,3 +1,26 @@
+console.log(`src/configs/wallpapers/wallpaper.config.ts - line 1`)
+
+
+
+
+
+
+
+
+console.log(`src/configs/wallpapers/wallpaper.config.ts - line 10`)
+
+
+
+
+
+
+
+
+
+console.log(`src/configs/wallpapers/wallpaper.config.ts - line 20`)
+
+
+
 import type { Theme } from '$src/stores/theme.store';
 
 export type Wallpaper = {
@@ -13,10 +36,18 @@ export type Wallpaper = {
   };
 };
 
+
+console.log(`src/configs/wallpapers/wallpaper.config.ts - line 40`)
+
 const optimizedWallpapers = import.meta.glob('../../assets/wallpapers/*.{webp,jpg}', {
   eager: true,
   query: { width: 2000, quality: 95, format: 'webp' },
 }) as Record<string, NodeModule>;
+
+
+
+
+console.log(`src/configs/wallpapers/wallpaper.config.ts - line 50 -> 43`)
 
 const createWallpapersConfig = <TConfig = string>(
   wallpaperConfig: Record<keyof TConfig, Wallpaper>,
@@ -41,6 +72,12 @@ const createWallpapersConfig = <TConfig = string>(
 
   return wallpaperConfig;
 };
+
+
+
+
+
+console.log(`src/configs/wallpapers/wallpaper.config.ts - line 80 -> 71`)
 
 export const wallpapersConfig = createWallpapersConfig({
   ventura: {
@@ -405,3 +442,59 @@ export const wallpapersConfig = createWallpapersConfig({
 });
 
 export type WallpaperID = keyof typeof wallpapersConfig;
+
+
+
+
+
+// line 500 ...
+
+
+
+
+
+
+
+
+
+// line 500 ...
+
+
+
+
+
+
+
+
+
+// line 500 ...
+
+
+
+
+
+
+
+
+
+// line 500 ...
+
+
+
+
+
+
+
+
+
+// line 500 ...
+
+
+
+
+
+
+
+
+
+console.log(`src/configs/wallpapers/wallpaper.config.ts - line 500 -> 440`)
