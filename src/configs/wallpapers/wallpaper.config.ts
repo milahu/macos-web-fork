@@ -1,4 +1,4 @@
-import type { Theme } from '🍎/stores/theme.store';
+import type { Theme } from '$src/stores/theme.store';
 
 export type Wallpaper = {
   name: string;

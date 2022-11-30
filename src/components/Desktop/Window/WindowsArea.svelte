@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { appsConfig } from '🍎/configs/apps/apps-config';
-  import { activeApp, activeAppZIndex, appZIndices, openApps } from '🍎/stores/apps.store';
+  import { appsConfig } from '$src/configs/apps/apps-config';
+  import { activeApp, activeAppZIndex, appZIndices, openApps } from '$src/stores/apps.store';
 
   $: $activeApp, ($activeAppZIndex += 2);
 

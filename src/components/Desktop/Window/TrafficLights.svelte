@@ -1,11 +1,11 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import CloseIcon from '🍎/components/SVG/traffic-lights/CloseSVG.svelte';
-  import GreenLight from '🍎/components/SVG/traffic-lights/GreenLight.svelte';
-  import MinimizeSvg from '🍎/components/SVG/traffic-lights/MinimizeSVG.svelte';
-  import { appsConfig } from '🍎/configs/apps/apps-config';
-  import type { AppID } from '🍎/stores/apps.store';
-  import { activeApp } from '🍎/stores/apps.store';
+  import CloseIcon from '$src/components/SVG/traffic-lights/CloseSVG.svelte';
+  import GreenLight from '$src/components/SVG/traffic-lights/GreenLight.svelte';
+  import MinimizeSvg from '$src/components/SVG/traffic-lights/MinimizeSVG.svelte';
+  import { appsConfig } from '$src/configs/apps/apps-config';
+  import type { AppID } from '$src/stores/apps.store';
+  import { activeApp } from '$src/stores/apps.store';
 
   export let appID: AppID;
 

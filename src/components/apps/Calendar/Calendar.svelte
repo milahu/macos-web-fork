@@ -1,6 +1,6 @@
 <script lang="ts">
   import { addMonths, format } from 'date-fns';
-  import { theme } from '🍎/stores/theme.store';
+  import { theme } from '$src/stores/theme.store';
   import LeftArrow from '~icons/ic/round-chevron-left';
   import RightArrow from '~icons/ic/round-chevron-right';
   import MonthView from './MonthView.svelte';

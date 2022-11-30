@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { elevation } from '🍎/actions';
-  import { wallpapersConfig } from '🍎/configs/wallpapers/wallpaper.config';
-  import { smallerClosestValue } from '🍎/helpers/smaller-closest-value';
-  import { createIntervalStore } from '🍎/stores/interval.store';
-  import { theme } from '🍎/stores/theme.store';
-  import { wallpaper } from '🍎/stores/wallpaper.store';
+  import { elevation } from '$src/actions';
+  import { wallpapersConfig } from '$src/configs/wallpapers/wallpaper.config';
+  import { smallerClosestValue } from '$src/helpers/smaller-closest-value';
+  import { createIntervalStore } from '$src/stores/interval.store';
+  import { theme } from '$src/stores/theme.store';
+  import { wallpaper } from '$src/stores/wallpaper.store';
 
   let visibleBackgroundImage = wallpapersConfig.ventura.thumbnail;
 

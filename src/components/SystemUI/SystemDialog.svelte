@@ -1,10 +1,10 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { sineInOut } from 'svelte/easing';
-  import { clickOutside, elevation, portal, trapFocus } from '🍎/actions';
-  import { fadeOut } from '🍎/helpers/fade';
-  import { prefersReducedMotion } from '🍎/stores/prefers-motion.store';
-  import { theme } from '🍎/stores/theme.store';
+  import { clickOutside, elevation, portal, trapFocus } from '$src/actions';
+  import { fadeOut } from '$src/helpers/fade';
+  import { prefersReducedMotion } from '$src/stores/prefers-motion.store';
+  import { theme } from '$src/stores/theme.store';
 
   export let backdropDismiss = true;
 

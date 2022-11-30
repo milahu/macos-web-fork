@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { elevation } from '🍎/actions';
-  import { appsConfig } from '🍎/configs/apps/apps-config';
-  import { appsInFullscreen } from '🍎/stores/apps.store';
-  import { systemNeedsUpdate } from '🍎/stores/system.store';
-  import { isDockHidden } from '🍎/stores/dock.store';
+  import { elevation } from '$src/actions';
+  import { appsConfig } from '$src/configs/apps/apps-config';
+  import { appsInFullscreen } from '$src/stores/apps.store';
+  import { systemNeedsUpdate } from '$src/stores/system.store';
+  import { isDockHidden } from '$src/stores/dock.store';
   import DockItem from './DockItem.svelte';
 
   let dockMouseX: number | null = null;

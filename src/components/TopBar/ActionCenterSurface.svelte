@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { theme } from '🍎/stores/theme.store';
+  import { theme } from '$src/stores/theme.store';
 
   export let grid: [[columnStart: number, columnSpan: number], [rowStart: number, rowSpan: number]];
 

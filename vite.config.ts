@@ -5,6 +5,7 @@ import { imagetools } from 'vite-imagetools';
 import { VitePWA } from 'vite-plugin-pwa';
 
 import { prefetch } from './prefetch-plugin';
+import path from 'path'
 
 export default defineConfig({
   plugins: [
@@ -93,7 +94,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '🍎': new URL('./src/', import.meta.url).pathname,
+      '$src': path.resolve('./src')
     },
   },
   build: {
