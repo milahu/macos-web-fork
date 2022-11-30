@@ -1,4 +1,4 @@
-import { createAppConfig } from '🍎/helpers/create-app-config';
+import { createAppConfig } from '$src/helpers/create-app-config';
 
 const wallpapers = createAppConfig({
   title: 'Wallpapers',

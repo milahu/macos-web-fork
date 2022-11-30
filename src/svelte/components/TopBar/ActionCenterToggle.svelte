@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { clickOutside, focusOutside, elevation } from '🍎/actions';
-  import { fadeIn, fadeOut } from '🍎/helpers/fade';
-  import { activeApp, openApps } from '🍎/stores/apps.store';
+  import { clickOutside, focusOutside, elevation } from '$src/actions';
+  import { fadeIn, fadeOut } from '$src/helpers/fade';
+  import { activeApp, openApps } from '$src/stores/apps.store';
   import SwitchSvg from '../SVG/SwitchSVG.svelte';
   import SystemDialog from '../SystemUI/SystemDialog.svelte';
   import ActionCenter from './ActionCenter.svelte';

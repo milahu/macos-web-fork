@@ -27,12 +27,12 @@
   import { onDestroy } from 'svelte';
   import { sineInOut } from 'svelte/easing';
   import { spring, tweened } from 'svelte/motion';
-  import { elevation } from '🍎/actions';
-  import { appsConfig } from '🍎/configs/apps/apps-config';
-  import { AppID, isAppBeingDragged } from '🍎/stores/apps.store';
-  import { activeApp, openApps } from '🍎/stores/apps.store';
-  import { prefersReducedMotion } from '🍎/stores/prefers-motion.store';
-  import { theme } from '🍎/stores/theme.store';
+  import { elevation } from '$src/actions';
+  import { appsConfig } from '$src/configs/apps/apps-config';
+  import { AppID, isAppBeingDragged } from '$src/stores/apps.store';
+  import { activeApp, openApps } from '$src/stores/apps.store';
+  import { prefersReducedMotion } from '$src/stores/prefers-motion.store';
+  import { theme } from '$src/stores/theme.store';
 
   export let mouseX: number | null;
   export let appID: AppID;

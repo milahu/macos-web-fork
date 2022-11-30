@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { isDockHidden } from '🍎/stores/dock.store';
+  import { isDockHidden } from '$src/stores/dock.store';
 
   export let isBeingDragged: boolean;
 

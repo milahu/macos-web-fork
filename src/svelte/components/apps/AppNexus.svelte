@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { AppID } from '🍎/stores/apps.store';
+  import type { AppID } from '$src/stores/apps.store';
 
   export let appID: AppID;
   export let isBeingDragged: boolean;

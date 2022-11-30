@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { elevation } from '🍎/actions';
-  import { contextMenuConfig } from '🍎/configs/menu/context.menu.config';
-  import { fadeOut } from '🍎/helpers/fade';
-  import { theme } from '🍎/stores/theme.store';
+  import { elevation } from '$src/actions';
+  import { contextMenuConfig } from '$src/configs/menu/context.menu.config';
+  import { fadeOut } from '$src/helpers/fade';
+  import { theme } from '$src/stores/theme.store';
 
   export let targetElement: HTMLElement;
 

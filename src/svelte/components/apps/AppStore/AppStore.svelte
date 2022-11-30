@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { spring } from 'svelte/motion';
-  import { waitFor } from '🍎/helpers/wait-for';
-  import type { AppID } from '🍎/stores/apps.store';
-  import { prefersReducedMotion } from '🍎/stores/prefers-motion.store';
+  import { waitFor } from '$src/helpers/wait-for';
+  import type { AppID } from '$src/stores/apps.store';
+  import { prefersReducedMotion } from '$src/stores/prefers-motion.store';
 
   export let appID: AppID;
 

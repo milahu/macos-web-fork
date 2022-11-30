@@ -1,6 +1,6 @@
 <script lang="ts">
   import { useRegisterSW } from 'virtual:pwa-register/svelte';
-  import { systemNeedsUpdate } from '🍎/stores/system.store';
+  import { systemNeedsUpdate } from '$src/stores/system.store';
   import SystemDialog from '../SystemUI/SystemDialog.svelte';
 
   let systemUpdateDialog: SystemDialog;

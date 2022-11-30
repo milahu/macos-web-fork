@@ -3,10 +3,10 @@
   import { onMount } from 'svelte';
   import { sineInOut } from 'svelte/easing';
 
-  import { elevation } from '🍎/actions';
-  import { appsConfig } from '🍎/configs/apps/apps-config';
-  import { randint } from '🍎/helpers/random';
-  import { waitFor } from '🍎/helpers/wait-for';
+  import { elevation } from '$src/actions';
+  import { appsConfig } from '$src/configs/apps/apps-config';
+  import { randint } from '$src/helpers/random';
+  import { waitFor } from '$src/helpers/wait-for';
   import {
     activeApp,
     activeAppZIndex,
@@ -15,9 +15,9 @@
     appZIndices,
     isAppBeingDragged,
     openApps,
-  } from '🍎/stores/apps.store';
-  import { prefersReducedMotion } from '🍎/stores/prefers-motion.store';
-  import { theme } from '🍎/stores/theme.store';
+  } from '$src/stores/apps.store';
+  import { prefersReducedMotion } from '$src/stores/prefers-motion.store';
+  import { theme } from '$src/stores/theme.store';
 
   import AppNexus from '../../apps/AppNexus.svelte';
   import TrafficLights from './TrafficLights.svelte';

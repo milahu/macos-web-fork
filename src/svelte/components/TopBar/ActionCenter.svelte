@@ -6,13 +6,13 @@
   import TransitionMaskedIcon from '~icons/mdi/transition-masked';
   import NotchIcon from '~icons/pepicons/smartphone-notch';
 
-  import { colors } from '🍎/configs/theme/colors.config';
-  import { wallpapersConfig } from '🍎/configs/wallpapers/wallpaper.config';
-  import { activeApp, openApps } from '🍎/stores/apps.store';
-  import { shouldShowNotch } from '🍎/stores/menubar.store';
-  import { prefersReducedMotion } from '🍎/stores/prefers-motion.store';
-  import { theme } from '🍎/stores/theme.store';
-  import { wallpaper } from '🍎/stores/wallpaper.store';
+  import { colors } from '$src/configs/theme/colors.config';
+  import { wallpapersConfig } from '$src/configs/wallpapers/wallpaper.config';
+  import { activeApp, openApps } from '$src/stores/apps.store';
+  import { shouldShowNotch } from '$src/stores/menubar.store';
+  import { prefersReducedMotion } from '$src/stores/prefers-motion.store';
+  import { theme } from '$src/stores/theme.store';
+  import { wallpaper } from '$src/stores/wallpaper.store';
 
   import ActionCenterSurface from './ActionCenterSurface.svelte';
   import ActionCenterTile from './ActionCenterTile.svelte';
