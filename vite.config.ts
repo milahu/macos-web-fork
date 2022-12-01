@@ -7,6 +7,14 @@ import { VitePWA } from 'vite-plugin-pwa';
 import { prefetch } from './prefetch-plugin';
 import path from 'path'
 
+const assetsDir = '';
+const outputDefaults = {
+  // remove hashes from filenames
+  entryFileNames: `${assetsDir}[name].js`,
+  chunkFileNames: `${assetsDir}[name].js`,
+  assetFileNames: `${assetsDir}[name].[ext]`,
+}
+
 export default defineConfig({
   root: "src/svelte",
   plugins: [
@@ -100,6 +108,18 @@ export default defineConfig({
   },
   build: {
     minify: 'terser',
+    rollupOptions: {
+      output: {
+        ...outputDefaults,
+      }
+    },
+  },
+  worker: {
+    rollupOptions: {
+      output: {
+        ...outputDefaults,
+      }
+    },
   },
   clearScreen: false,
 });
