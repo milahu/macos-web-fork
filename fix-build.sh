@@ -2,6 +2,8 @@
 
 outDir=docs
 
+touch $outDir/.nojekyll
+
 workboxCount=$(ls $outDir/workbox-????????.js 2>/dev/null | wc -l)
 
 if [[ "$workboxCount" != "1" ]]
