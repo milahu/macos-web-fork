@@ -107,7 +107,7 @@ export default defineConfig({
     },
   },
   build: {
-    minify: 'terser',
+    minify: false,
     rollupOptions: {
       output: {
         ...outputDefaults,
