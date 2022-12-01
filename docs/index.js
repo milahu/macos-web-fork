@@ -2128,93 +2128,93 @@ theme.subscribe(({ scheme, primaryColor }) => {
   document.body.style.setProperty("--system-color-primary-contrast-hsl", `${colorObj.contrastHsl}`);
 });
 
-const bug = "/bug.svg";
+const bug = ""+new URL('bug.svg', import.meta.url).href+"";
 
-const search = "/search.svg";
+const search = ""+new URL('search.svg', import.meta.url).href+"";
 
-const bar = "/bar.svg";
+const bar = ""+new URL('bar.svg', import.meta.url).href+"";
 
-const folder = "/folder.svg";
+const folder = ""+new URL('folder.svg', import.meta.url).href+"";
 
-const image = "/file-image.svg";
+const image = ""+new URL('file-image.svg', import.meta.url).href+"";
 
-const file = "/file.svg";
+const file = ""+new URL('file.svg', import.meta.url).href+"";
 
-const document$1 = "/document.svg";
+const document$1 = ""+new URL('document.svg', import.meta.url).href+"";
 
-const edit = "/edit.svg";
+const edit = ""+new URL('edit.svg', import.meta.url).href+"";
 
-const download = "/download.svg";
+const download = ""+new URL('download.svg', import.meta.url).href+"";
 
-const upload = "/upload.svg";
+const upload = ""+new URL('upload.svg', import.meta.url).href+"";
 
-const check = "/check.svg";
+const check = ""+new URL('check.svg', import.meta.url).href+"";
 
-const close = "/close.svg";
+const close = ""+new URL('close.svg', import.meta.url).href+"";
 
-const calendar = "/calendar.svg";
+const calendar = ""+new URL('calendar.svg', import.meta.url).href+"";
 
-const browser = "/browser.svg";
+const browser = ""+new URL('browser.svg', import.meta.url).href+"";
 
-const comment = "/comment.svg";
+const comment = ""+new URL('comment.svg', import.meta.url).href+"";
 
-const comment_o = "/comment-o.svg";
+const comment_o = ""+new URL('comment-o.svg', import.meta.url).href+"";
 
-const github = "/github-alt.svg";
+const github = ""+new URL('github-alt.svg', import.meta.url).href+"";
 
-const heart = "/heart.svg";
+const heart = ""+new URL('heart.svg', import.meta.url).href+"";
 
-const heart_o = "/heart-o.svg";
+const heart_o = ""+new URL('heart-o.svg', import.meta.url).href+"";
 
-const star = "/star.svg";
+const star = ""+new URL('star.svg', import.meta.url).href+"";
 
-const star_o = "/star-o.svg";
+const star_o = ""+new URL('star-o.svg', import.meta.url).href+"";
 
-const moon = "/moon.svg";
+const moon = ""+new URL('moon.svg', import.meta.url).href+"";
 
-const sunny_o = "/sunny-o.svg";
+const sunny_o = ""+new URL('sunny-o.svg', import.meta.url).href+"";
 
-const print = "/print.svg";
+const print = ""+new URL('print.svg', import.meta.url).href+"";
 
-const play = "/play.svg";
+const play = ""+new URL('play.svg', import.meta.url).href+"";
 
-const pause = "/pause.svg";
+const pause = ""+new URL('pause.svg', import.meta.url).href+"";
 
-const stop = "/stop.svg";
+const stop = ""+new URL('stop.svg', import.meta.url).href+"";
 
-const sync = "/sync.svg";
+const sync = ""+new URL('sync.svg', import.meta.url).href+"";
 
-const fork = "/fork.svg";
+const fork = ""+new URL('fork.svg', import.meta.url).href+"";
 
-const code = "/code.svg";
+const code = ""+new URL('code.svg', import.meta.url).href+"";
 
-const app_menu = "/app-menu.svg";
+const app_menu = ""+new URL('app-menu.svg', import.meta.url).href+"";
 
-const cart = "/cart.svg";
+const cart = ""+new URL('cart.svg', import.meta.url).href+"";
 
-const info = "/info.svg";
+const info = ""+new URL('info.svg', import.meta.url).href+"";
 
-const share = "/share.svg";
+const share = ""+new URL('share.svg', import.meta.url).href+"";
 
-const warning = "/warning.svg";
+const warning = ""+new URL('warning.svg', import.meta.url).href+"";
 
-const question = "/question.svg";
+const question = ""+new URL('question.svg', import.meta.url).href+"";
 
-const gear = "/gear.svg";
+const gear = ""+new URL('gear.svg', import.meta.url).href+"";
 
-const home = "/home.svg";
+const home = ""+new URL('home.svg', import.meta.url).href+"";
 
-const smile = "/favicon.svg";
+const smile = ""+new URL('favicon.svg', import.meta.url).href+"";
 
-const arrow_up = "/arrow-up.svg";
+const arrow_up = ""+new URL('arrow-up.svg', import.meta.url).href+"";
 
-const arrow_right = "/arrow-right.svg";
+const arrow_right = ""+new URL('arrow-right.svg', import.meta.url).href+"";
 
-const arrow_left = "/arrow-left.svg";
+const arrow_left = ""+new URL('arrow-left.svg', import.meta.url).href+"";
 
-const arrow_down = "/arrow-down.svg";
+const arrow_down = ""+new URL('arrow-down.svg', import.meta.url).href+"";
 
-const bell = "/bell.svg";
+const bell = ""+new URL('bell.svg', import.meta.url).href+"";
 
 const appIcon = {};
 appIcon["bug"] = bug;
@@ -9306,14 +9306,14 @@ class ContextMenu extends SvelteComponent {
 	}
 }
 
-const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
+const scriptRel = 'modulepreload';const assetsURL = function(dep,importerUrl) { return new URL(dep, importerUrl).href };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
     // @ts-ignore
     if (!true || !deps || deps.length === 0) {
         return baseModule();
     }
     return Promise.all(deps.map((dep) => {
         // @ts-ignore
-        dep = assetsURL(dep);
+        dep = assetsURL(dep, importerUrl);
         // @ts-ignore
         if (dep in seen)
             return;
@@ -9372,13 +9372,13 @@ function registerSW(options = {}) {
   };
   async function register() {
     if ("serviceWorker" in navigator) {
-      const { Workbox, messageSW } = await __vitePreload(() => import('./workbox-window.prod.es5.js'),true?[]:void 0);
+      const { Workbox, messageSW } = await __vitePreload(() => import('./workbox-window.prod.es5.js'),true?[]:void 0,import.meta.url);
       sendSkipWaitingMessage = async () => {
         if (registration && registration.waiting) {
           await messageSW(registration.waiting, { type: "SKIP_WAITING" });
         }
       };
-      wb = new Workbox("/sw.js", { scope: "/", type: "classic" });
+      wb = new Workbox("./sw.js", { scope: "./", type: "classic" });
       wb.addEventListener("activated", (event) => {
         if (event.isUpdate)
           ;
@@ -9394,7 +9394,7 @@ function registerSW(options = {}) {
       wb.register({ immediate }).then((r) => {
         registration = r;
         if (onRegisteredSW)
-          onRegisteredSW("/sw.js", r);
+          onRegisteredSW("./sw.js", r);
         else
           onRegistered == null ? void 0 : onRegistered(r);
       }).catch((e) => {
@@ -9574,7 +9574,7 @@ function create_fragment$2(ctx) {
 	};
 }
 
-const buildDate = '2022-12-01T08:51:15.264Z';
+const buildDate = '2022-12-01T09:14:22.954Z';
 
 function instance$2($$self, $$props, $$invalidate) {
 	let $needRefresh;
@@ -9670,7 +9670,7 @@ function create_if_block(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./Window.js'),true?["Window.js","Window.css"]:void 0), info);
+	handle_promise(__vitePreload(() => import('./Window.js'),true?["Window.js","Window.css"]:void 0,import.meta.url), info);
 
 	return {
 		c() {

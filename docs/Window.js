@@ -49,7 +49,7 @@ function create_else_block$1(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./AppStore.js'),true?["AppStore.js","AppStore.css","index.js","index.css"]:void 0), info);
+	handle_promise(__vitePreload(() => import('./AppStore.js'),true?["AppStore.js","AppStore.css","index.js","index.css"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
@@ -106,7 +106,7 @@ function create_if_block_4(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./PurusProfile.js'),true?["PurusProfile.js","PurusProfile.css","index.js","index.css"]:void 0), info);
+	handle_promise(__vitePreload(() => import('./PurusProfile.js'),true?["PurusProfile.js","PurusProfile.css","index.js","index.css"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
@@ -162,7 +162,7 @@ function create_if_block_3(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./WallpaperSelectorApp.js'),true?["WallpaperSelectorApp.js","WallpaperSelectorApp.css","index.js","index.css"]:void 0), info);
+	handle_promise(__vitePreload(() => import('./WallpaperSelectorApp.js'),true?["WallpaperSelectorApp.js","WallpaperSelectorApp.css","index.js","index.css"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
@@ -218,7 +218,7 @@ function create_if_block_2(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./Calculator.js'),true?["Calculator.js","Calculator.css","index.js","index.css"]:void 0), info);
+	handle_promise(__vitePreload(() => import('./Calculator.js'),true?["Calculator.js","Calculator.css","index.js","index.css"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
@@ -274,7 +274,7 @@ function create_if_block_1(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./VSCode.js'),true?["VSCode.js","VSCode.css","index.js","index.css"]:void 0), info);
+	handle_promise(__vitePreload(() => import('./VSCode.js'),true?["VSCode.js","VSCode.css","index.js","index.css"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
@@ -331,7 +331,7 @@ function create_if_block$1(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./Calendar.js'),true?["Calendar.js","Calendar.css","index.js","index.css"]:void 0), info);
+	handle_promise(__vitePreload(() => import('./Calendar.js'),true?["Calendar.js","Calendar.css","index.js","index.css"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
