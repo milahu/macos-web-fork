@@ -19,7 +19,7 @@
 
 {#if !(hiddenSplashScreen || import.meta.env.DEV)}
   <div out:fadeOut={{ duration: 500 }} class="splash-screen" use:elevation={'bootup-screen'}>
-    <img alt="start" src={appIcon['start']}/>
+    <img alt="start" class="darkmode-invert" src={appIcon['start']}/>
 
     <div
       class="progress"

@@ -23,7 +23,7 @@
           on:focus={() => ($activeMenu = menuID)}
         >
           {#if menuID === 'apple'}
-            <img alt="start" src={appIcon['start']}/>
+            <img alt="start" class="darkmode-invert" src={appIcon['start']}/>
           {:else}
             {menuConfig.title}
           {/if}

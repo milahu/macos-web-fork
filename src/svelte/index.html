@@ -7,6 +7,26 @@
     <meta name="description" content="MacOS Desktop experience for Web" />
     <title>webtop</title>
     <script type="module" src="main.ts" defer></script>
+    <style>
+      /* light mode */
+      :root { --fg: black; --bg: white; }
+      /* dark mode */
+      @media screen {
+        @media (prefers-color-scheme: dark) {
+          :root { --fg: white; --bg: black; }
+          .darkmode-invert {
+            filter: invert();
+          }
+        }
+        /* darkreader extension */
+        :root[data-darkreader-mode="dynamic"] {
+          --fg: white; --bg: black;
+        }
+        :root[data-darkreader-mode="dynamic"] .darkmode-invert {
+          filter: invert();
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

@@ -25,7 +25,7 @@
 
 <div class="container" use:clickOutside={{ callback: hide }} use:focusOutside={{ callback: hide }}>
   <button style:--scale={visible ? 1 : 0} on:click={show} on:focus={show}>
-    <img alt="config" src={appIcon['config']}/>
+    <img alt="config" class="darkmode-invert" src={appIcon['config']}/>
   </button>
 
   {#if visible}

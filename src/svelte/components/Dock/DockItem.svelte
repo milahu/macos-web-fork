@@ -133,6 +133,7 @@
     <img
       bind:this={imageEl}
       src={appIcon[appID] || appIcon['bug']}
+      class:darkmode-invert={true}
       alt="{title} app"
       style:width="{$widthPX / 16}rem"
       draggable="false"
