@@ -82,11 +82,4 @@
 
     transform: translateX(-0%);
   }
-
-  #audio {
-    position: absolute;
-    z-index: -9999;
-
-    display: none;
-  }
 </style>
