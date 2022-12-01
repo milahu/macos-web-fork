@@ -19,7 +19,7 @@
     //    "baseUrl": "./src",
     //"baseUrl": ".",
     "paths": {
-      "$src/*": ["src/*"]
+      "$src/*": ["./src/svelte/*"]
     },
     "types": ["vite-plugin-pwa/client"],
     /**

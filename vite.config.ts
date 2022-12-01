@@ -95,7 +95,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '$src': path.resolve('./src')
+      '$src': path.resolve('./src/svelte')
     },
   },
   build: {
