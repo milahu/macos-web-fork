@@ -107,6 +107,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: path.resolve('./docs'),
     target: 'esnext',
     minify: false,
     rollupOptions: {
