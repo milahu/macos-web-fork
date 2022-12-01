@@ -1,6 +1,7 @@
 {
   "name": "macos-svelte",
   "version": "13.0.0",
+  "homepage": "https://github.com/milahu/svelte-web-desktop",
   "type": "module",
   "scripts": {
     "dev": "vite",

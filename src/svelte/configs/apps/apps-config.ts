@@ -1,5 +1,7 @@
 import { createAppConfig } from '$src/helpers/create-app-config';
 
+import pkg from '../../../../package.json';
+
 const wallpapers = createAppConfig({
   title: 'Wallpapers',
   resizable: true,
@@ -51,12 +53,15 @@ const systemPreferences = createAppConfig({
   resizable: true,
 });
 
+/** @ts-ignore */
+const sourceUrl = pkg.homepage;
+
 const viewSource = createAppConfig({
   title: `View Source`,
   resizable: true,
 
   shouldOpenWindow: false,
-  externalAction: () => window.open('https://github.com/puruvj/macos-web', '_blank'),
+  externalAction: () => window.open(sourceUrl, '_blank'),
 });
 
 const appstore = createAppConfig({
