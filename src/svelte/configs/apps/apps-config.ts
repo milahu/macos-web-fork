@@ -51,16 +51,6 @@ const systemPreferences = createAppConfig({
   resizable: true,
 });
 
-const purusTwitter = createAppConfig({
-  title: `About the Developer`,
-  resizable: true,
-
-  dockBreaksBefore: true,
-
-  height: 600,
-  width: 800,
-});
-
 const viewSource = createAppConfig({
   title: `View Source`,
   resizable: true,
@@ -85,6 +75,5 @@ export const appsConfig = {
 
   // 'system-preferences': systemPreferences,
 
-  'purus-twitter': purusTwitter,
   'view-source': viewSource,
 };

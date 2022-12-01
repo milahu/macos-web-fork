@@ -14,7 +14,6 @@ export const openApps = writable<Record<AppID, boolean>>({
   calendar: false,
   // 'system-preferences': false,
 
-  'purus-twitter': false,
   'view-source': true,
 });
 
@@ -37,7 +36,6 @@ export const appZIndices = writable<Record<AppID, number>>({
   calendar: 0,
   // 'system-preferences': 0,
 
-  'purus-twitter': 0,
   'view-source': 0,
 });
 
@@ -53,6 +51,5 @@ export const appsInFullscreen = writable<Record<AppID, boolean>>({
   calendar: false,
   // 'system-preferences': false,
 
-  'purus-twitter': false,
   'view-source': false,
 });
