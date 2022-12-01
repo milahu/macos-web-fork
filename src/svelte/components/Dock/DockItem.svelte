@@ -117,7 +117,7 @@
   $: showPwaBadge && bounceEffect();
 </script>
 
-<button on:click={openApp} aria-label="Launch {title} app" class="dock-open-app-button {appID}">
+<button on:click={openApp} aria-label="Launch {title} app" class="dock-open-app-button {String(appID)}">
   <p
     class="tooltip"
     class:tooltip-enabled={!$isAppBeingDragged}
