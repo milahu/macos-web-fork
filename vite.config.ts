@@ -8,6 +8,7 @@ import { prefetch } from './prefetch-plugin';
 import path from 'path'
 
 export default defineConfig({
+  root: "src/svelte",
   plugins: [
     svelte(),
     prefetch(),
