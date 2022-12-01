@@ -59,6 +59,7 @@ appIcon['comment-o'] = comment_o
 
 import github from "feathericon/build/svg/github-alt.svg"
 appIcon['github'] = github
+appIcon['view-source'] = github
 
 import heart from "feathericon/build/svg/heart.svg"
 appIcon['heart'] = heart
@@ -104,7 +105,6 @@ appIcon['version-control'] = fork
 // TODO vscode/vscodium icon
 import code from "feathericon/build/svg/code.svg"
 appIcon['vscode'] = code
-appIcon['view-source'] = code
 
 import app_menu from "feathericon/build/svg/app-menu.svg"
 appIcon['menu'] = app_menu
