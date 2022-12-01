@@ -1,7 +1,7 @@
 <script lang="ts">
   import { clickOutside, elevation, focusOutside } from '$src/actions';
   import { activeMenu, menuBarMenus } from '$src/stores/menubar.store';
-  import AppleIcon from '~icons/mdi/apple';
+  import { appIcon } from '$src/configs/icons/feathericon';
   import Menu from './Menu.svelte';
 </script>
 
@@ -23,7 +23,7 @@
           on:focus={() => ($activeMenu = menuID)}
         >
           {#if menuID === 'apple'}
-            <AppleIcon />
+            <img alt="start" src={appIcon['start']}/>
           {:else}
             {menuConfig.title}
           {/if}

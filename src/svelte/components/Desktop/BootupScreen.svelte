@@ -5,7 +5,7 @@
   import { elevation } from '$src/actions';
   import { fadeOut } from '$src/helpers/fade';
   import { waitFor } from '$src/helpers/wait-for';
-  import AppleIcon from '~icons/mdi/apple';
+  import { appIcon } from '$src/configs/icons/feathericon';
 
   let hiddenSplashScreen = false;
   let progressVal = tweened(100, { duration: 3000, easing: quintInOut });
@@ -19,7 +19,7 @@
 
 {#if !(hiddenSplashScreen || import.meta.env.DEV)}
   <div out:fadeOut={{ duration: 500 }} class="splash-screen" use:elevation={'bootup-screen'}>
-    <AppleIcon />
+    <img alt="start" src={appIcon['start']}/>
 
     <div
       class="progress"

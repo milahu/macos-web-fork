@@ -34,6 +34,8 @@
   import { prefersReducedMotion } from '$src/stores/prefers-motion.store';
   import { theme } from '$src/stores/theme.store';
 
+  import { appIcon } from '$src/configs/icons/feathericon';
+
   export let mouseX: number | null;
   export let appID: AppID;
   export let needsUpdate: boolean = false;
@@ -130,7 +132,7 @@
   <span style:transform="translate(0, {$appOpenIconBounceTransform}px)">
     <img
       bind:this={imageEl}
-      src="/app-icons/{appID}/256.webp"
+      src={appIcon[appID] || appIcon['bug']}
       alt="{title} app"
       style:width="{$widthPX / 16}rem"
       draggable="false"

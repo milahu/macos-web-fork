@@ -5,6 +5,7 @@
   import SwitchSvg from '../SVG/SwitchSVG.svelte';
   import SystemDialog from '../SystemUI/SystemDialog.svelte';
   import ActionCenter from './ActionCenter.svelte';
+  import { appIcon } from '$src/configs/icons/feathericon';
 
   let visible = false;
   let themeWarningDialog: SystemDialog;
@@ -24,7 +25,7 @@
 
 <div class="container" use:clickOutside={{ callback: hide }} use:focusOutside={{ callback: hide }}>
   <button style:--scale={visible ? 1 : 0} on:click={show} on:focus={show}>
-    <SwitchSvg />
+    <img alt="config" src={appIcon['config']}/>
   </button>
 
   {#if visible}
