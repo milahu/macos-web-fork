@@ -13,6 +13,7 @@ specifiers:
   '@sveltejs/vite-plugin-svelte': 1.0.9
   autoprefixer: ^10.4.13
   date-fns: ^2.29.3
+  feathericon: ^1.0.2
   popmotion: ^11.0.5
   postcss: ^8.4.19
   sass: ^1.56.1
@@ -45,6 +46,7 @@ devDependencies:
   '@iconify-json/uil': 1.1.3
   '@sveltejs/vite-plugin-svelte': 1.0.9_svelte@3.53.1+vite@3.1.7
   autoprefixer: 10.4.13_postcss@8.4.19
+  feathericon: 1.0.2
   postcss: 8.4.19
   sass: 1.56.1
   svelte: 3.53.1
@@ -2208,6 +2210,10 @@ packages:
     resolution: {integrity: sha512-YpkpUnK8od0o1hmeSc7UUs/eB/vIPWJYjKck2QKIzAf71Vm1AAQ3EbuZB3g2JIy+pg+ERD0vqI79KyZiB2e2Nw==}
     dependencies:
       reusify: 1.0.4
+    dev: true
+
+  /feathericon/1.0.2:
+    resolution: {integrity: sha512-Y/aubbrxxmZDlzVIdnpu3FjHopzB1ADIDj6NLyYKdClmiH5KlILFAhsP8wcnkR2WKNg33y4k9OBmoF5B1IIINg==}
     dev: true
 
   /filelist/1.0.4:
