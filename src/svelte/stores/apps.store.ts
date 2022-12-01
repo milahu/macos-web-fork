@@ -16,8 +16,6 @@ export const openApps = writable<Record<AppID, boolean>>({
 
   'purus-twitter': false,
   'view-source': true,
-
-  vercel: true,
 });
 
 /** Which app is currently focused */
@@ -41,8 +39,6 @@ export const appZIndices = writable<Record<AppID, number>>({
 
   'purus-twitter': 0,
   'view-source': 0,
-
-  vercel: 0,
 });
 
 export const isAppBeingDragged = writable(false);
@@ -59,6 +55,4 @@ export const appsInFullscreen = writable<Record<AppID, boolean>>({
 
   'purus-twitter': false,
   'view-source': false,
-
-  vercel: false,
 });
