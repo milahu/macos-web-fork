@@ -15,7 +15,8 @@ export function prefetch(): Plugin {
             tag: 'link',
             attrs: {
               rel: 'prefetch',
-              href: `/${chunkName}`,
+              // TODO use prefix from viteConfig.base
+              href: `./${chunkName}`,
             },
           } as HtmlTagDescriptor),
       );

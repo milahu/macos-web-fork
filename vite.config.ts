@@ -17,6 +17,7 @@ const outputDefaults = {
 
 export default defineConfig({
   root: "src/svelte",
+  base: "./", // relative paths in html
   plugins: [
     svelte(),
     prefetch(),
