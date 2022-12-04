@@ -98,7 +98,8 @@ export default defineConfig({
     },
   },
   build: {
-    minify: 'terser',
+    //minify: 'terser',
+    minify: false,
   },
   clearScreen: false,
 });
