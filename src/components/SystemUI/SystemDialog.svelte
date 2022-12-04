@@ -38,21 +38,7 @@
 
 {#if isOpen}
   <section class="overlay" use:portal={'#windows-area'} use:elevation={'system-dialog'}>
-    <div
-      class="dialog"
-      class:dark={$theme.scheme === 'dark'}
-      tabindex={0}
-      role="dialog"
-      aria-labelledby="info-title"
-      aria-describedby="info-description"
-      in:dialogOpenTransition
-      out:fadeOut
-      use:trapFocus
-      use:clickOutside={{ callback: () => backdropDismiss && close() }}
-      on:click|stopPropagation={() => {}}
-    >
       <slot />
-    </div>
   </section>
 {/if}
 
