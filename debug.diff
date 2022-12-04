@@ -1,0 +1,17 @@
+--- node_modules.bak/svelte-preprocess/dist/transformers/typescript.js	2022-12-04 11:14:26.067552571 +0100
++++ node_modules/svelte-preprocess/dist/transformers/typescript.js	2022-12-04 11:13:21.156863086 +0100
+@@ -285,6 +285,14 @@
+ }
+ const transformer = async ({ content, filename, markup, options = {}, attributes, }) => {
+     const basePath = process.cwd();
++    // no. only *.svelte files are processed here
++    /*
++    console.log(filename)
++    if (filename.endsWith("wallpaper.config.ts")) {
++        console.log("todo")
++        // not reached
++    }
++    */
+     if (filename == null)
+         return { code: content };
+     filename = (0, path_1.isAbsolute)(filename) ? filename : (0, path_1.resolve)(basePath, filename);
