@@ -16,6 +16,7 @@ const outputDefaults = {
   // remove hashes from filenames
   entryFileNames: `${assetsDir}[name].js`,
   chunkFileNames: `${assetsDir}[name].js`,
+  // TODO move icons to icons/
   assetFileNames: `${assetsDir}[name].[ext]`,
 }
 
