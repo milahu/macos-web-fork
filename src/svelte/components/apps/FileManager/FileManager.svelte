@@ -13,7 +13,14 @@
     import Preview from "./svelte-file-manager/src/Preview/Preview.svelte";
     import FileManager from "./svelte-file-manager/src/FileManager/FileManager.svelte";
 
-    export let config: Config = null;
+    export let config: Config = {
+      title: "",
+      version: "0",
+      maxReqSize: 100,
+      readOnly: false,
+      sharing: null, // Share link for this folder
+      hasPassword: false,
+    };
 
     let hashPathWasSetByMe: boolean = true;
 
