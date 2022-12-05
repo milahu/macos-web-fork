@@ -21,3 +21,9 @@ mv -v $outDir/workbox-????????.js $outDir/workbox.js
 
 echo patching $outDir/sw.js
 sed -i "s|$workboxName|workbox|g" $outDir/sw.js
+
+echo compressing node modules
+for f in docs/node_modules/*.js
+do
+  ( set -x; npx terser --compress --mangle --output $f $f )
+done
