@@ -113,7 +113,6 @@ export default defineConfig({
     alias: {
       '$src': path.resolve('./src/svelte'),
 
-      /*
       // https://github.com/jvilk/BrowserFS
       'fs': 'browserfs/dist/shims/fs.js',
       'buffer': 'browserfs/dist/shims/buffer.js',
@@ -121,7 +120,6 @@ export default defineConfig({
       'processGlobal': 'browserfs/dist/shims/process.js',
       'bufferGlobal': 'browserfs/dist/shims/bufferGlobal.js',
       'bfsGlobal': require.resolve('browserfs'),
-      */
 
     },
   },
