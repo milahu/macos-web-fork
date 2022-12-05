@@ -1,3 +1,6 @@
 [submodule "src/svelte/components/apps/Terminal/codemirror-shell"]
 	path = src/svelte/components/apps/Terminal/codemirror-shell
 	url = https://github.com/milahu/codemirror-shell
+[submodule "src/svelte/components/apps/FileManager/svelte-file-manager"]
+	path = src/svelte/components/apps/FileManager/svelte-file-manager
+	url = https://github.com/milahu/svelte-file-manager
