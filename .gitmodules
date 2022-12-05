@@ -1,0 +1,3 @@
+[submodule "src/svelte/components/apps/Terminal/codemirror-shell"]
+	path = src/svelte/components/apps/Terminal/codemirror-shell
+	url = https://github.com/milahu/codemirror-shell
