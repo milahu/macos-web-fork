@@ -18,6 +18,9 @@
           .darkmode-invert {
             filter: invert();
           }
+          .xterm-fg-8 {
+            color: gray !important;
+          }
         }
         /* darkreader extension */
         :root[data-darkreader-mode="dynamic"] {
@@ -25,6 +28,13 @@
         }
         :root[data-darkreader-mode="dynamic"] .darkmode-invert {
           filter: invert();
+        }
+        /* FIXME this is not working. darkreader shows a weird bright color instead of gray.
+          test: type "var x" into the javascript console,
+          this should return a gray "undefined".
+        */
+        :root[data-darkreader-mode="dynamic"] .xterm-fg-8 {
+          color: gray !important;
         }
       }
     </style>
