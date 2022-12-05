@@ -8,6 +8,7 @@
     <title>webtop</title>
     
     <style>
+      /* see also src/svelte/css/theme.scss */
       /* light mode */
       :root { --fg: black; --bg: white; }
       /* dark mode */
@@ -17,6 +18,9 @@
           .darkmode-invert {
             filter: invert();
           }
+          .xterm-fg-8 {
+            color: gray !important;
+          }
         }
         /* darkreader extension */
         :root[data-darkreader-mode="dynamic"] {
@@ -25,35 +29,49 @@
         :root[data-darkreader-mode="dynamic"] .darkmode-invert {
           filter: invert();
         }
+        /* FIXME this is not working. darkreader shows a weird bright color instead of gray.
+          test: type "var x" into the javascript console,
+          this should return a gray "undefined".
+        */
+        :root[data-darkreader-mode="dynamic"] .xterm-fg-8 {
+          color: gray !important;
+        }
       }
     </style>
     <script type="module" crossorigin src="./index.js"></script>
+    <link rel="modulepreload" crossorigin href="./node_modules/svelte@3.53.1.js">
+    <link rel="modulepreload" crossorigin href="./node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js">
+    <link rel="modulepreload" crossorigin href="./node_modules/feathericon@1.0.2.js">
+    <link rel="modulepreload" crossorigin href="./node_modules/style-value-types@5.1.2.js">
+    <link rel="modulepreload" crossorigin href="./node_modules/hey-listen@1.0.8.js">
+    <link rel="modulepreload" crossorigin href="./node_modules/popmotion@11.0.5.js">
+    <link rel="modulepreload" crossorigin href="./node_modules/date-fns@2.29.3.js">
     <link rel="stylesheet" href="./index.css">
     <link rel="prefetch" href="./favicon.svg">
     <link rel="prefetch" href="./bug.svg">
     <link rel="prefetch" href="./search.svg">
+    <link rel="prefetch" href="./bar.svg">
+    <link rel="prefetch" href="./folder.svg">
     <link rel="prefetch" href="./file-image.svg">
     <link rel="prefetch" href="./file.svg">
-    <link rel="prefetch" href="./folder.svg">
-    <link rel="prefetch" href="./bar.svg">
     <link rel="prefetch" href="./document.svg">
-    <link rel="prefetch" href="./download.svg">
     <link rel="prefetch" href="./edit.svg">
     <link rel="prefetch" href="./upload.svg">
+    <link rel="prefetch" href="./download.svg">
     <link rel="prefetch" href="./check.svg">
     <link rel="prefetch" href="./close.svg">
     <link rel="prefetch" href="./calendar.svg">
     <link rel="prefetch" href="./browser.svg">
     <link rel="prefetch" href="./comment.svg">
+    <link rel="prefetch" href="./comment-o.svg">
     <link rel="prefetch" href="./github-alt.svg">
     <link rel="prefetch" href="./heart.svg">
-    <link rel="prefetch" href="./comment-o.svg">
     <link rel="prefetch" href="./heart-o.svg">
     <link rel="prefetch" href="./star.svg">
     <link rel="prefetch" href="./star-o.svg">
     <link rel="prefetch" href="./moon.svg">
-    <link rel="prefetch" href="./print.svg">
     <link rel="prefetch" href="./sunny-o.svg">
+    <link rel="prefetch" href="./print.svg">
     <link rel="prefetch" href="./play.svg">
     <link rel="prefetch" href="./pause.svg">
     <link rel="prefetch" href="./stop.svg">
@@ -73,10 +91,32 @@
     <link rel="prefetch" href="./arrow-left.svg">
     <link rel="prefetch" href="./arrow-down.svg">
     <link rel="prefetch" href="./bell.svg">
+    <link rel="prefetch" href="./terminal.svg">
     <link rel="prefetch" href="./index.js">
+    <link rel="prefetch" href="./node_modules/@codemirror_commands@6.1.2.js">
+    <link rel="prefetch" href="./node_modules/@codemirror_language@6.3.1.js">
+    <link rel="prefetch" href="./node_modules/@codemirror_state@6.1.4.js">
+    <link rel="prefetch" href="./node_modules/@codemirror_view@6.6.0.js">
+    <link rel="prefetch" href="./node_modules/@lezer_common@1.0.2.js">
+    <link rel="prefetch" href="./node_modules/@lezer_highlight@1.1.3.js">
+    <link rel="prefetch" href="./node_modules/@neodrag_svelte@1.2.4.js">
+    <link rel="prefetch" href="./node_modules/date-fns@2.29.3.js">
+    <link rel="prefetch" href="./node_modules/esprima@4.0.1.js">
+    <link rel="prefetch" href="./node_modules/feathericon@1.0.2.js">
+    <link rel="prefetch" href="./node_modules/framesync@6.1.2.js">
+    <link rel="prefetch" href="./node_modules/hey-listen@1.0.8.js">
+    <link rel="prefetch" href="./node_modules/popmotion@11.0.5.js">
+    <link rel="prefetch" href="./node_modules/queue-microtask@1.2.3.js">
+    <link rel="prefetch" href="./node_modules/style-mod@4.0.0.js">
+    <link rel="prefetch" href="./node_modules/style-value-types@5.1.2.js">
+    <link rel="prefetch" href="./node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js">
+    <link rel="prefetch" href="./node_modules/svelte@3.53.1.js">
+    <link rel="prefetch" href="./node_modules/tslib@2.4.0.js">
+    <link rel="prefetch" href="./node_modules/w3c-keyname@2.2.6.js">
+    <link rel="prefetch" href="./node_modules/workbox-window@6.5.4.js">
     <link rel="prefetch" href="./Window.js">
-    <link rel="prefetch" href="./workbox-window.prod.es5.js">
     <link rel="prefetch" href="./AppStore.js">
+    <link rel="prefetch" href="./Terminal.js">
     <link rel="prefetch" href="./PurusProfile.js">
     <link rel="prefetch" href="./WallpaperSelectorApp.js">
     <link rel="prefetch" href="./Calculator.js">
@@ -85,6 +125,7 @@
     <link rel="prefetch" href="./index.css">
     <link rel="prefetch" href="./Window.css">
     <link rel="prefetch" href="./AppStore.css">
+    <link rel="prefetch" href="./Terminal.css">
     <link rel="prefetch" href="./PurusProfile.css">
     <link rel="prefetch" href="./WallpaperSelectorApp.css">
     <link rel="prefetch" href="./Calculator.css">

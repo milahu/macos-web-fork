@@ -1,4 +1,11 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, q as element, r as space, l as attr, T as src_url_equal, v as toggle_class, a as insert, o as append, n as noop, d as detach, y as component_subscribe, a3 as isDockHidden } from './index.js';
+import { S as SvelteComponent, i as init, s as safe_not_equal, e as element, a as space, b as attr, f as src_url_equal, c as toggle_class, h as insert, j as append, n as noop, m as detach, o as component_subscribe } from './node_modules/svelte@3.53.1.js';
+import { j as isDockHidden } from './index.js';
+import './node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js';
+import './node_modules/feathericon@1.0.2.js';
+import './node_modules/popmotion@11.0.5.js';
+import './node_modules/style-value-types@5.1.2.js';
+import './node_modules/hey-listen@1.0.8.js';
+import './node_modules/date-fns@2.29.3.js';
 
 const VSCode_svelte_svelte_type_style_lang = '';
 
