@@ -13,7 +13,7 @@
     import Preview from "./svelte-file-manager/src/Preview/Preview.svelte";
     import FileManager from "./svelte-file-manager/src/FileManager/FileManager.svelte";
 
-    export let config: Config;
+    export let config: Config = null;
 
     let hashPathWasSetByMe: boolean = true;
 
@@ -27,7 +27,7 @@
 
     $: footer = null;
     let footers = [];
-    let footerHandler: number | Timeout = -1;
+    let footerHandler: number | ReturnType<typeof setTimeout> = -1;
 
     $: {
         mule = mule.sort(sorter);
