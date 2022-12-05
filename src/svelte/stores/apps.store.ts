@@ -16,6 +16,7 @@ export const openApps = writable<Record<AppID, boolean>>({
 
   'view-source': true,
   terminal: false,
+  'file-manager': false,
 });
 
 /** Which app is currently focused */
@@ -39,6 +40,7 @@ export const appZIndices = writable<Record<AppID, number>>({
 
   'view-source': 0,
   terminal: 0,
+  'file-manager': 0,
 });
 
 export const isAppBeingDragged = writable(false);
@@ -55,4 +57,5 @@ export const appsInFullscreen = writable<Record<AppID, boolean>>({
 
   'view-source': false,
   terminal: false,
+  'file-manager': false,
 });

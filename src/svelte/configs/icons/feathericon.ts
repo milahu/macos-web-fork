@@ -14,6 +14,7 @@ appIcon['menu'] = bar
 
 import folder from "feathericon/build/svg/folder.svg"
 appIcon['folder'] = folder
+appIcon['file-manager'] = folder
 
 import image from "feathericon/build/svg/file-image.svg"
 appIcon['wallpapers'] = image

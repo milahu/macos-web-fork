@@ -80,6 +80,14 @@ const terminal = createAppConfig({
   width: 480,
 });
 
+const fileManager = createAppConfig({
+  title: 'FileManager',
+  expandable: true,
+  resizable: true,
+  height: 300,
+  width: 480,
+});
+
 export const appsConfig = {
   finder,
   wallpapers,
@@ -87,6 +95,7 @@ export const appsConfig = {
   calendar,
   vscode,
   terminal,
+  'file-manager': fileManager,
   appstore,
   // safari,
 
