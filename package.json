@@ -29,6 +29,7 @@
     "browserfs": "^1.4.3",
     "esprima": "^4.0.1",
     "feathericon": "^1.0.2",
+    "hammerjs": "^2.0.8",
     "pify": "^6.1.0",
     "postcss": "^8.4.19",
     "queue-microtask": "^1.2.3",
