@@ -5,7 +5,7 @@
 
   let systemUpdateDialog: SystemDialog;
 
-  // replaced dynamically
+  // replaced by src/svelte/svelte.config.js
   const buildDate = '__DATE__';
 
   // Will store the update event, so we can use this value on AppStore to show the badge.
