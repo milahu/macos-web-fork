@@ -151,6 +151,9 @@ import bell from "feathericon/build/svg/bell.svg"
 appIcon['bell'] = bell
 appIcon['notifications'] = bell
 
+import terminal from "feathericon/build/svg/terminal.svg"
+appIcon['terminal'] = terminal
+
 /*
 import logo_vercel from "feathericon/build/svg/logo-vercel.svg"
 appIcon['vercel'] = logo_vercel

@@ -69,12 +69,24 @@ const appstore = createAppConfig({
   resizable: true,
 });
 
+const terminal = createAppConfig({
+  title: 'Terminal',
+
+  expandable: true,
+  resizable: true,
+
+  // 16:10 = 480:300
+  height: 300,
+  width: 480,
+});
+
 export const appsConfig = {
   finder,
   wallpapers,
   calculator,
   calendar,
   vscode,
+  terminal,
   appstore,
   // safari,
 

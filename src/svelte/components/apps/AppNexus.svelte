@@ -25,6 +25,10 @@
   {#await import('./PurusProfile/PurusProfile.svelte') then { default: PurusProfile }}
     <PurusProfile />
   {/await}
+{:else if appID === 'terminal'}
+  {#await import('./Terminal/Terminal.svelte') then { default: Terminal }}
+    <Terminal />
+  {/await}
 {:else}
   {#await import('./AppStore/AppStore.svelte') then { default: AppStore }}
     <AppStore {appID} />
