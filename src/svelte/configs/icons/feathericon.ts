@@ -15,6 +15,7 @@ appIcon['menu'] = bar
 import folder from "feathericon/build/svg/folder.svg"
 appIcon['folder'] = folder
 appIcon['file-manager'] = folder
+appIcon['directory'] = folder
 
 import image from "feathericon/build/svg/file-image.svg"
 appIcon['wallpapers'] = image
@@ -22,8 +23,33 @@ appIcon['wallpapers'] = image
 import file from "feathericon/build/svg/file.svg"
 appIcon['file'] = file
 
+import file_audio from "feathericon/build/svg/file-audio.svg"
+appIcon['file-audio'] = file_audio
+
+import file_excel from "feathericon/build/svg/file-excel.svg"
+appIcon['file-excel'] = file_excel
+
+import file_image from "feathericon/build/svg/file-image.svg"
+appIcon['file-image'] = file_image
+
+import file_movie from "feathericon/build/svg/file-movie.svg"
+appIcon['file-movie'] = file_movie
+appIcon['file-video'] = file_movie
+
+import file_powerpoint from "feathericon/build/svg/file-powerpoint.svg"
+appIcon['file-powerpoint'] = file_powerpoint
+
+import file_word from "feathericon/build/svg/file-word.svg"
+appIcon['file-word'] = file_word
+
+import file_zip from "feathericon/build/svg/file-zip.svg"
+appIcon['file-zip'] = file_zip
+
 import document from "feathericon/build/svg/document.svg"
 appIcon['document'] = document
+appIcon['file-text'] = document
+appIcon['file-pdf'] = document
+appIcon['file-document'] = document
 
 import edit from "feathericon/build/svg/edit.svg"
 appIcon['edit'] = edit

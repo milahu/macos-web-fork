@@ -1,9 +1,9 @@
 <script lang="ts">
 
     // based on ./svelte-file-manager/src/App.svelte
-    // TODO use fs.readdir etc
 
-    import "./svelte-file-manager/src/global.css";
+    // @ts-ignore Property 'fs' does not exist on type
+    const fs: typeof import("fs") = globalThis.fs;
 
     import { theme } from '$src/stores/theme.store';
 
@@ -12,6 +12,13 @@
     import {Config, File, Mule, SORTERS} from "./svelte-file-manager/src/Struct.svelte";
     import Preview from "./svelte-file-manager/src/Preview/Preview.svelte";
     import FileManager from "./svelte-file-manager/src/FileManager/FileManager.svelte";
+
+    // this breaks .container in
+    // <section class="container"
+    //import "axentix/dist/axentix.min.css";
+    import "./axentix.css";
+
+    import "./svelte-file-manager/src/global.css";
 
     export let config: Config = {
       title: "",
@@ -26,11 +33,17 @@
 
     $: mule = Mule.empty();
 
-    $: path = [];
+    //$: path = [];
+    $: path = ["home", "user"];
+
     $: slideshowIndex = -1;
 
+    // FIXME sorting is broken
     $: sorter = SORTERS.ABC;
-    $: mode = "GRID";
+
+    // FIXME grid is ugly in small window. blame axentix css?
+    //$: mode = "GRID";
+    $: mode = "LIST";
 
     $: footer = null;
     let footers = [];
@@ -92,21 +105,35 @@
             });
         }
 
-        loadPath(hash2path());
+        //loadPath(hash2path());
+        loadPath(path);
     });
 
     async function loadPath(nuPath: string[]) {
-        const res: Response = await fetch("ls?path=" + encodeURIComponent(nuPath.join("/")));
-        if (res.status != 200) {
-            addFooter({
-                color: "red",
-                html: "<span><b>ERROR</b> In changing dir: " + await res.text() + "</span>"
-            });
-        } else {
-            mule = Mule.fromAny(await res.json(), nuPath).sort(sorter);
-            path = nuPath;
-            setPathAsHash();
-        }
+        const nuPathStr = "/" + nuPath.join("/");
+        //console.log("loadPath nuPath", nuPath)
+        console.log("loadPath", nuPathStr, new Error().stack)
+        const itemsList = await fs.promises.readdir(nuPathStr);
+        const items = await Promise.all(itemsList.map(async (fileName) => {
+          const filePath = nuPathStr + (nuPathStr == "/" ? "" : "/") + fileName;
+          const stats = await fs.promises.stat(filePath);
+          // TODO filemanager should use the node fs api
+          const fileobj = {
+            stats,
+            isLink: stats.isSymbolicLink(),
+            mimeType: stats.isDirectory() ? "#directory" : "text/plain", // TODO
+            name: fileName,
+            size: stats.size,
+            chDate: +stats.mtime / 1000, // Date -> msec -> sec
+            owner: 0,
+            group: 0,
+            permissions: stats.mode,
+          };
+          return fileobj;
+        }));
+        //console.log("loadPath items", items);
+        mule = new Mule(items, nuPath).sort(sorter);
+        path = nuPath;
     }
 
     window.addEventListener('hashchange', () => {
@@ -146,18 +173,22 @@
 
 </script>
 
+<!--
 <svelte:head>
     <title>{composeTitle(config.title, path)}</title>
 </svelte:head>
+-->
 
 <section class="container" class:dark={$theme.scheme === 'dark'}>
   <header class="app-window-drag-handle titlebar" />
   <section class="main-area">
 
     {#if slideshowIndex < 0}
+        <!-- window title
         <nav class="navbar blue dark-2">
             <p class="navbar-brand cursor-pointer" on:click={goToRoot}>{config.title}</p>
         </nav>
+        -->
         <FileManager bind:path {config} bind:mule bind:sorter bind:mode on:pathEvent={chPath}
                      on:openItem={openSlideshow}
                      on:reload={reload} on:logout/>

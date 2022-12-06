@@ -11,6 +11,10 @@
   import * as _BrowserFS from 'browserfs';
   import pify from 'pify';
 
+  import { appIcon } from "$src/configs/icons/feathericon";
+  // used in components/apps/FileManager/svelte-file-manager/src/MimeTypes.svelte
+  globalThis.icons = appIcon;
+
   const BrowserFS = pify(_BrowserFS);
 
   // Installs globals onto window:
@@ -22,6 +26,11 @@
   BrowserFS.install(globalThis);
 
   let fs: typeof import("fs");
+
+  /*
+  // @ts-ignore Property 'fs' does not exist on type
+  const fs: typeof import("fs") = globalThis.fs;
+  */
 
   (async () => {
 
@@ -46,8 +55,17 @@
     // @ts-ignore Property 'fs' does not exist on type
     globalThis.fs = fs;
 
+    // TODO implement recursive mkdir in browserfs
+    //await fs.promises.mkdir("/home/user", { recursive: true });
+    try {
+      await fs.promises.mkdir("/home");
+    } catch (_) {}
+    try {
+      await fs.promises.mkdir("/home/user");
+    } catch (_) {}
+
     // demo: write file
-    await fs.promises.writeFile('/test.txt', 'Cool, I can do this in the browser!');
+    await fs.promises.writeFile('/home/user/test.txt', 'Cool, I can do this in the browser!');
 
     /*
     // demo: read file

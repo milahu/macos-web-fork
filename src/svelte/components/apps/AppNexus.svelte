@@ -3,6 +3,8 @@
 
   export let appID: AppID;
   export let isBeingDragged: boolean;
+
+  //console.log(`components/apps/AppNexus.svelte: appID = ${appID}`)
 </script>
 
 {#if appID === 'calendar'}
@@ -28,6 +30,10 @@
 {:else if appID === 'terminal'}
   {#await import('./Terminal/Terminal.svelte') then { default: Terminal }}
     <Terminal />
+  {/await}
+{:else if appID === 'file-manager'}
+  {#await import('./FileManager/FileManager.svelte') then { default: FileManager }}
+    <FileManager />
   {/await}
 {:else}
   {#await import('./AppStore/AppStore.svelte') then { default: AppStore }}

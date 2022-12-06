@@ -1,4 +1,5 @@
 import { writable } from 'svelte-local-storage-store';
+
 import { colors } from '$src/configs/theme/colors.config';
 
 export type Theme = {
@@ -6,8 +7,9 @@ export type Theme = {
   primaryColor: keyof typeof colors;
 };
 
-export const theme = writable<Theme>('macos:theme-settings', {
-  scheme: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+export const theme = writable<Theme>('macos:theme-settings-zzz', {
+  //scheme: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+  scheme: 'light',
   primaryColor: 'blue',
 });
 
@@ -15,7 +17,8 @@ theme.subscribe(({ scheme, primaryColor }) => {
   // Color scheme
   const { classList } = document.body;
   classList.remove('light', 'dark');
-  classList.add(scheme);
+  //classList.add(scheme);
+  classList.add('light');
 
   // Primary color
   const colorObj = colors[primaryColor][scheme];
