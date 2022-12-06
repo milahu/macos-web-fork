@@ -7,8 +7,11 @@
   import SystemUpdate from './SystemUpdate.svelte';
   import WindowsArea from './Window/WindowsArea.svelte';
 
+  // TODO use a more lightweight fs
+  // https://github.com/isomorphic-git/lightning-fs
   // @ts-ignore Cannot find module 'browserfs' or its corresponding type declarations
   import * as _BrowserFS from 'browserfs';
+
   import pify from 'pify';
 
   import { appIcon } from "$src/configs/icons/feathericon";
@@ -34,7 +37,6 @@
 
   (async () => {
 
-    // TODO pify + async
     await BrowserFS.configure({
       fs: "MountableFileSystem",
       options: {
