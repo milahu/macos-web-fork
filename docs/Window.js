@@ -7,11 +7,17 @@ import './node_modules/popmotion@11.0.5.js';
 import './node_modules/style-value-types@5.1.2.js';
 import './node_modules/hey-listen@1.0.8.js';
 import './node_modules/date-fns@2.29.3.js';
+import './node_modules/browserfs@1.4.3.js';
+import './node_modules/pify@6.1.0.js';
 
 function randint(lower, upper) {
   if (lower > upper)
     [lower, upper] = [upper, lower];
   return lower + Math.floor((upper - lower) * Math.random());
+}
+
+function get_then_context_7(ctx) {
+	ctx[10] = ctx[3].default;
 }
 
 function get_then_context_6(ctx) {
@@ -42,7 +48,7 @@ function get_then_context(ctx) {
 	ctx[2] = ctx[3].default;
 }
 
-// (29:0) {:else}
+// (34:0) {:else}
 function create_else_block$1(ctx) {
 	let await_block_anchor;
 	let current;
@@ -52,14 +58,14 @@ function create_else_block$1(ctx) {
 		current: null,
 		token: null,
 		hasCatch: false,
-		pending: create_pending_block_6,
-		then: create_then_block_6,
-		catch: create_catch_block_6,
+		pending: create_pending_block_7,
+		then: create_then_block_7,
+		catch: create_catch_block_7,
 		value: 3,
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./AppStore.js'),true?["AppStore.js","AppStore.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js"]:void 0,import.meta.url), info);
+	handle_promise(__vitePreload(() => import('./AppStore.js'),true?["AppStore.js","AppStore.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js","node_modules/browserfs@1.4.3.js","node_modules/pify@6.1.0.js"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
@@ -99,7 +105,63 @@ function create_else_block$1(ctx) {
 	};
 }
 
-// (25:31) 
+// (30:35) 
+function create_if_block_6(ctx) {
+	let await_block_anchor;
+	let current;
+
+	let info = {
+		ctx,
+		current: null,
+		token: null,
+		hasCatch: false,
+		pending: create_pending_block_6,
+		then: create_then_block_6,
+		catch: create_catch_block_6,
+		value: 3,
+		blocks: [,,,]
+	};
+
+	handle_promise(__vitePreload(() => import('./FileManager.js'),true?["FileManager.js","FileManager.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js","node_modules/browserfs@1.4.3.js","node_modules/pify@6.1.0.js","node_modules/hammerjs@2.0.8.js","node_modules/axentix@2.2.1.js","node_modules/sweetalert2@11.6.15.js"]:void 0,import.meta.url), info);
+
+	return {
+		c() {
+			await_block_anchor = empty();
+			info.block.c();
+		},
+		m(target, anchor) {
+			insert(target, await_block_anchor, anchor);
+			info.block.m(target, info.anchor = anchor);
+			info.mount = () => await_block_anchor.parentNode;
+			info.anchor = await_block_anchor;
+			current = true;
+		},
+		p(new_ctx, dirty) {
+			ctx = new_ctx;
+		},
+		i(local) {
+			if (current) return;
+			transition_in(info.block);
+			current = true;
+		},
+		o(local) {
+			for (let i = 0; i < 3; i += 1) {
+				const block = info.blocks[i];
+				transition_out(block);
+			}
+
+			current = false;
+		},
+		d(detaching) {
+			if (detaching) detach(await_block_anchor);
+			info.block.d(detaching);
+			info.token = null;
+			info = null;
+		}
+	};
+}
+
+// (26:31) 
 function create_if_block_5(ctx) {
 	let await_block_anchor;
 	let current;
@@ -116,7 +178,7 @@ function create_if_block_5(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./Terminal.js'),true?["Terminal.js","Terminal.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js","node_modules/@codemirror_view@6.6.0.js","node_modules/@codemirror_state@6.1.4.js","node_modules/style-mod@4.0.0.js","node_modules/w3c-keyname@2.2.6.js","node_modules/@codemirror_language@6.3.1.js","node_modules/@lezer_common@1.0.2.js","node_modules/@lezer_highlight@1.1.3.js","node_modules/@codemirror_commands@6.1.2.js","node_modules/queue-microtask@1.2.3.js","node_modules/esprima@4.0.1.js"]:void 0,import.meta.url), info);
+	handle_promise(__vitePreload(() => import('./Terminal.js'),true?["Terminal.js","Terminal.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js","node_modules/browserfs@1.4.3.js","node_modules/pify@6.1.0.js","node_modules/@codemirror_view@6.6.0.js","node_modules/@codemirror_state@6.1.4.js","node_modules/style-mod@4.0.0.js","node_modules/w3c-keyname@2.2.6.js","node_modules/@codemirror_language@6.3.1.js","node_modules/@lezer_common@1.0.2.js","node_modules/@lezer_highlight@1.1.3.js","node_modules/@codemirror_commands@6.1.2.js","node_modules/queue-microtask@1.2.3.js","node_modules/esprima@4.0.1.js"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
@@ -155,7 +217,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (21:36) 
+// (22:36) 
 function create_if_block_4(ctx) {
 	let await_block_anchor;
 	let current;
@@ -172,7 +234,7 @@ function create_if_block_4(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./PurusProfile.js'),true?["PurusProfile.js","PurusProfile.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js"]:void 0,import.meta.url), info);
+	handle_promise(__vitePreload(() => import('./PurusProfile.js'),true?["PurusProfile.js","PurusProfile.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js","node_modules/browserfs@1.4.3.js","node_modules/pify@6.1.0.js"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
@@ -211,7 +273,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (17:33) 
+// (18:33) 
 function create_if_block_3(ctx) {
 	let await_block_anchor;
 	let current;
@@ -228,7 +290,7 @@ function create_if_block_3(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./WallpaperSelectorApp.js'),true?["WallpaperSelectorApp.js","WallpaperSelectorApp.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js"]:void 0,import.meta.url), info);
+	handle_promise(__vitePreload(() => import('./WallpaperSelectorApp.js'),true?["WallpaperSelectorApp.js","WallpaperSelectorApp.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js","node_modules/browserfs@1.4.3.js","node_modules/pify@6.1.0.js"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
@@ -267,7 +329,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (13:33) 
+// (14:33) 
 function create_if_block_2(ctx) {
 	let await_block_anchor;
 	let current;
@@ -323,7 +385,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (9:29) 
+// (10:29) 
 function create_if_block_1(ctx) {
 	let await_block_anchor;
 	let current;
@@ -340,7 +402,7 @@ function create_if_block_1(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./VSCode.js'),true?["VSCode.js","VSCode.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js"]:void 0,import.meta.url), info);
+	handle_promise(__vitePreload(() => import('./VSCode.js'),true?["VSCode.js","VSCode.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js","node_modules/browserfs@1.4.3.js","node_modules/pify@6.1.0.js"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
@@ -380,7 +442,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (5:0) {#if appID === 'calendar'}
+// (6:0) {#if appID === 'calendar'}
 function create_if_block$1(ctx) {
 	let await_block_anchor;
 	let current;
@@ -397,7 +459,7 @@ function create_if_block$1(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./Calendar.js'),true?["Calendar.js","Calendar.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js"]:void 0,import.meta.url), info);
+	handle_promise(__vitePreload(() => import('./Calendar.js'),true?["Calendar.js","Calendar.css","node_modules/svelte@3.53.1.js","index.js","index.css","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js","node_modules/browserfs@1.4.3.js","node_modules/pify@6.1.0.js"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
@@ -436,8 +498,8 @@ function create_if_block$1(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
-function create_catch_block_6(ctx) {
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
+function create_catch_block_7(ctx) {
 	return {
 		c: noop,
 		m: noop,
@@ -448,12 +510,12 @@ function create_catch_block_6(ctx) {
 	};
 }
 
-// (30:74)      <AppStore {appID}
-function create_then_block_6(ctx) {
-	get_then_context_6(ctx);
+// (35:74)      <AppStore {appID}
+function create_then_block_7(ctx) {
+	get_then_context_7(ctx);
 	let appstore;
 	let current;
-	appstore = new /*AppStore*/ ctx[9]({ props: { appID: /*appID*/ ctx[0] } });
+	appstore = new /*AppStore*/ ctx[10]({ props: { appID: /*appID*/ ctx[0] } });
 
 	return {
 		c() {
@@ -464,7 +526,7 @@ function create_then_block_6(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			get_then_context_6(ctx);
+			get_then_context_7(ctx);
 			const appstore_changes = {};
 			if (dirty & /*appID*/ 1) appstore_changes.appID = /*appID*/ ctx[0];
 			appstore.$set(appstore_changes);
@@ -484,8 +546,8 @@ function create_then_block_6(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
-function create_pending_block_6(ctx) {
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
+function create_pending_block_7(ctx) {
 	return {
 		c: noop,
 		m: noop,
@@ -496,7 +558,59 @@ function create_pending_block_6(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
+function create_catch_block_6(ctx) {
+	return {
+		c: noop,
+		m: noop,
+		i: noop,
+		o: noop,
+		d: noop
+	};
+}
+
+// (31:83)      <FileManager />   {/await}
+function create_then_block_6(ctx) {
+	get_then_context_6(ctx);
+	let filemanager;
+	let current;
+	filemanager = new /*FileManager*/ ctx[9]({});
+
+	return {
+		c() {
+			create_component(filemanager.$$.fragment);
+		},
+		m(target, anchor) {
+			mount_component(filemanager, target, anchor);
+			current = true;
+		},
+		i(local) {
+			if (current) return;
+			transition_in(filemanager.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(filemanager.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			destroy_component(filemanager, detaching);
+		}
+	};
+}
+
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
+function create_pending_block_6(ctx) {
+	return {
+		c: noop,
+		m: noop,
+		i: noop,
+		o: noop,
+		d: noop
+	};
+}
+
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
 function create_catch_block_5(ctx) {
 	return {
 		c: noop,
@@ -507,7 +621,7 @@ function create_catch_block_5(ctx) {
 	};
 }
 
-// (26:74)      <Terminal />   {/await}
+// (27:74)      <Terminal />   {/await}
 function create_then_block_5(ctx) {
 	get_then_context_5(ctx);
 	let terminal;
@@ -537,7 +651,7 @@ function create_then_block_5(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
 function create_pending_block_5(ctx) {
 	return {
 		c: noop,
@@ -548,7 +662,7 @@ function create_pending_block_5(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
 function create_catch_block_4(ctx) {
 	return {
 		c: noop,
@@ -559,7 +673,7 @@ function create_catch_block_4(ctx) {
 	};
 }
 
-// (22:86)      <PurusProfile />   {/await}
+// (23:86)      <PurusProfile />   {/await}
 function create_then_block_4(ctx) {
 	get_then_context_4(ctx);
 	let purusprofile;
@@ -589,7 +703,7 @@ function create_then_block_4(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
 function create_pending_block_4(ctx) {
 	return {
 		c: noop,
@@ -600,7 +714,7 @@ function create_pending_block_4(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
 function create_catch_block_3(ctx) {
 	return {
 		c: noop,
@@ -611,7 +725,7 @@ function create_catch_block_3(ctx) {
 	};
 }
 
-// (18:99)      <WallpaperSelector />   {/await}
+// (19:99)      <WallpaperSelector />   {/await}
 function create_then_block_3(ctx) {
 	get_then_context_3(ctx);
 	let wallpaperselector;
@@ -641,7 +755,7 @@ function create_then_block_3(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
 function create_pending_block_3(ctx) {
 	return {
 		c: noop,
@@ -652,7 +766,7 @@ function create_pending_block_3(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
 function create_catch_block_2(ctx) {
 	return {
 		c: noop,
@@ -663,7 +777,7 @@ function create_catch_block_2(ctx) {
 	};
 }
 
-// (14:80)      <Calculator />   {/await}
+// (15:80)      <Calculator />   {/await}
 function create_then_block_2(ctx) {
 	get_then_context_2(ctx);
 	let calculator;
@@ -693,7 +807,7 @@ function create_then_block_2(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
 function create_pending_block_2(ctx) {
 	return {
 		c: noop,
@@ -704,7 +818,7 @@ function create_pending_block_2(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
 function create_catch_block_1(ctx) {
 	return {
 		c: noop,
@@ -716,7 +830,7 @@ function create_catch_block_1(ctx) {
 	};
 }
 
-// (10:68)      <VSCode {isBeingDragged}
+// (11:68)      <VSCode {isBeingDragged}
 function create_then_block_1(ctx) {
 	get_then_context_1(ctx);
 	let vscode;
@@ -757,7 +871,7 @@ function create_then_block_1(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
 function create_pending_block_1(ctx) {
 	return {
 		c: noop,
@@ -769,7 +883,7 @@ function create_pending_block_1(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
 function create_catch_block(ctx) {
 	return {
 		c: noop,
@@ -780,7 +894,7 @@ function create_catch_block(ctx) {
 	};
 }
 
-// (6:74)      <Calendar />   {/await}
+// (7:74)      <Calendar />   {/await}
 function create_then_block(ctx) {
 	get_then_context(ctx);
 	let calendar;
@@ -810,7 +924,7 @@ function create_then_block(ctx) {
 	};
 }
 
-// (1:0) <script lang="ts">export let appID; export let isBeingDragged; </script>  {#if appID === 'calendar'}
+// (1:0) <script lang="ts">export let appID; export let isBeingDragged; //console.log(`components/apps/AppNexus.svelte: appID = ${appID}
 function create_pending_block(ctx) {
 	return {
 		c: noop,
@@ -834,6 +948,7 @@ function create_fragment$7(ctx) {
 		create_if_block_3,
 		create_if_block_4,
 		create_if_block_5,
+		create_if_block_6,
 		create_else_block$1
 	];
 
@@ -846,7 +961,8 @@ function create_fragment$7(ctx) {
 		if (/*appID*/ ctx[0] === 'wallpapers') return 3;
 		if (/*appID*/ ctx[0] === 'purus-twitter') return 4;
 		if (/*appID*/ ctx[0] === 'terminal') return 5;
-		return 6;
+		if (/*appID*/ ctx[0] === 'file-manager') return 6;
+		return 7;
 	}
 
 	current_block_type_index = select_block_type(ctx);

@@ -6,6 +6,8 @@ import './node_modules/popmotion@11.0.5.js';
 import './node_modules/style-value-types@5.1.2.js';
 import './node_modules/hey-listen@1.0.8.js';
 import './node_modules/date-fns@2.29.3.js';
+import './node_modules/browserfs@1.4.3.js';
+import './node_modules/pify@6.1.0.js';
 
 const VSCode_svelte_svelte_type_style_lang = '';
 

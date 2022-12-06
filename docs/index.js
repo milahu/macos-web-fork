@@ -1,8 +1,10 @@
 import { t as tick, w as writable, S as SvelteComponent, i as init, s as safe_not_equal, e as element, a as space, b as attr, c as toggle_class, d as set_style, f as src_url_equal, h as insert, j as append, k as action_destroyer, l as listen, n as noop, m as detach, r as run_all, o as component_subscribe, p as spring, q as tweened, u as sineInOut, v as onDestroy, x as set_store_value, y as binding_callbacks, z as add_render_callback, A as transition_in, B as group_outros, C as check_outros, D as transition_out, E as destroy_each, F as globals, G as create_component, H as mount_component, I as destroy_component, J as sineIn, K as sineOut, L as empty, M as createEventDispatcher, N as create_slot, O as stop_propagation, P as update_slot_base, Q as get_all_dirty_from_scope, R as get_slot_changes, T as is_function, U as create_in_transition, V as create_out_transition, W as assign, X as svg_element, Y as set_svg_attributes, Z as get_spread_update, _ as exclude_internal_props, $ as bubble, a0 as onMount, a1 as text, a2 as set_data, a3 as bind, a4 as add_flush_callback, a5 as readable, a6 as quintInOut, a7 as prevent_default, a8 as handle_promise, a9 as update_await_block_branch } from './node_modules/svelte@3.53.1.js';
 import { w as writable$1 } from './node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js';
-import { b as bug, s as search, a as bar, f as folder, i as image, c as file, d as document$1, e as edit, g as download, u as upload, h as check, j as close, k as calendar$1, l as browser, m as comment, n as comment_o, o as github, p as heart, q as heart_o, r as star, t as star_o, v as moon, w as sunny_o, x as print, y as play, z as pause, A as stop, B as sync, C as fork, D as code, E as app_menu, F as cart, G as info, H as share, I as warning, J as question, K as gear, L as home, M as smile, N as arrow_up, O as arrow_right, P as arrow_left, Q as arrow_down, R as bell, S as terminal$1 } from './node_modules/feathericon@1.0.2.js';
+import { b as bug, s as search, a as bar, f as folder, c as file_image, d as file, e as file_audio, g as file_excel, h as file_movie, i as file_powerpoint, j as file_word, k as file_zip, l as document$1, m as edit, n as download, u as upload, o as check, p as close, q as calendar$1, r as browser, t as comment, v as comment_o, w as github, x as heart, y as heart_o, z as star, A as star_o, B as moon, C as sunny_o, D as print, E as play, F as pause, G as stop, H as sync, I as fork, J as code, K as app_menu, L as cart, M as info, N as share, O as warning, P as question, Q as gear, R as home, S as smile, T as arrow_up, U as arrow_right, V as arrow_left, W as arrow_down, X as bell, Y as terminal$1 } from './node_modules/feathericon@1.0.2.js';
 import { i as interpolate } from './node_modules/popmotion@11.0.5.js';
 import { f as format } from './node_modules/date-fns@2.29.3.js';
+import { _ as _BrowserFS } from './node_modules/browserfs@1.4.3.js';
+import { p as pify } from './node_modules/pify@6.1.0.js';
 import './node_modules/style-value-types@5.1.2.js';
 import './node_modules/hey-listen@1.0.8.js';
 
@@ -198,15 +200,23 @@ const devDependencies = {
 	"@iconify-json/ph": "^1.1.3",
 	"@iconify-json/uil": "^1.1.3",
 	"@sveltejs/vite-plugin-svelte": "1.0.9",
+	"@tsconfig/svelte": "^3.0.0",
+	"@types/node": "^18.11.10",
 	autoprefixer: "^10.4.13",
+	axentix: "^2.2.1",
+	browserfs: "^1.4.3",
 	esprima: "^4.0.1",
 	feathericon: "^1.0.2",
+	hammerjs: "^2.0.8",
+	pify: "^6.1.0",
 	postcss: "^8.4.19",
 	"queue-microtask": "^1.2.3",
 	sass: "^1.56.1",
 	svelte: "^3.53.1",
 	"svelte-check": "^2.10.0",
 	"svelte-preprocess": "^4.10.7",
+	sweetalert2: "^11.6.15",
+	terser: "^5.16.1",
 	typescript: "^4.9.3",
 	vite: "3.1.7",
 	"vite-imagetools": "^4.0.11",
@@ -286,6 +296,13 @@ const terminal = createAppConfig({
   height: 300,
   width: 480
 });
+const fileManager = createAppConfig({
+  title: "FileManager",
+  expandable: true,
+  resizable: true,
+  height: 300,
+  width: 480
+});
 const appsConfig = {
   finder,
   wallpapers,
@@ -293,6 +310,7 @@ const appsConfig = {
   calendar,
   vscode,
   terminal,
+  "file-manager": fileManager,
   appstore,
   "view-source": viewSource
 };
@@ -305,7 +323,8 @@ const openApps = writable({
   appstore: false,
   calendar: false,
   "view-source": true,
-  terminal: false
+  terminal: false,
+  "file-manager": false
 });
 const activeApp = writable("finder");
 const activeAppZIndex = writable(-2);
@@ -317,7 +336,8 @@ const appZIndices = writable({
   appstore: 0,
   calendar: 0,
   "view-source": 0,
-  terminal: 0
+  terminal: 0,
+  "file-manager": 0
 });
 const isAppBeingDragged = writable(false);
 const appsInFullscreen = writable({
@@ -328,7 +348,8 @@ const appsInFullscreen = writable({
   appstore: false,
   calendar: false,
   "view-source": false,
-  terminal: false
+  terminal: false,
+  "file-manager": false
 });
 
 const systemNeedsUpdate = writable(false);
@@ -414,14 +435,14 @@ const colors = colorsConfig({
   }
 });
 
-const theme = writable$1("macos:theme-settings", {
-  scheme: matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
+const theme = writable$1("macos:theme-settings-zzz", {
+  scheme: "light",
   primaryColor: "blue"
 });
 theme.subscribe(({ scheme, primaryColor }) => {
   const { classList } = document.body;
   classList.remove("light", "dark");
-  classList.add(scheme);
+  classList.add("light");
   const colorObj = colors[primaryColor][scheme];
   document.body.style.setProperty("--system-color-primary", `hsl(${colorObj.hsl})`);
   document.body.style.setProperty("--system-color-primary-hsl", `${colorObj.hsl}`);
@@ -437,9 +458,22 @@ appIcon["bug"] = bug;
 appIcon["finder"] = search;
 appIcon["menu"] = bar;
 appIcon["folder"] = folder;
-appIcon["wallpapers"] = image;
+appIcon["file-manager"] = folder;
+appIcon["directory"] = folder;
+appIcon["wallpapers"] = file_image;
 appIcon["file"] = file;
+appIcon["file-audio"] = file_audio;
+appIcon["file-excel"] = file_excel;
+appIcon["file-image"] = file_image;
+appIcon["file-movie"] = file_movie;
+appIcon["file-video"] = file_movie;
+appIcon["file-powerpoint"] = file_powerpoint;
+appIcon["file-word"] = file_word;
+appIcon["file-zip"] = file_zip;
 appIcon["document"] = document$1;
+appIcon["file-text"] = document$1;
+appIcon["file-pdf"] = document$1;
+appIcon["file-document"] = document$1;
 appIcon["edit"] = edit;
 appIcon["download"] = download;
 appIcon["upload"] = upload;
@@ -5436,7 +5470,7 @@ function create_fragment$2(ctx) {
 	};
 }
 
-const buildDate = '2022-12-05T13:48:57.634Z';
+const buildDate = '2022-12-06T15:46:46.516Z';
 
 function instance$2($$self, $$props, $$invalidate) {
 	let $needRefresh;
@@ -5449,8 +5483,6 @@ function instance$2($$self, $$props, $$invalidate) {
 	// We don't need to store it on localStorage since the new sw is on skip waiting state, and so
 	// a refresh or reopening the browser will prompt again the dialog to restart.
 	// Once updateServiceWorker is called, there is a full reload, so the app will be loaded again.
-	console.log('useRegisterSW');
-
 	const { needRefresh, updateServiceWorker } = useRegisterSW({
 		onRegistered(swr) {
 			console.log(`SW registered: ${swr}`);
@@ -5534,7 +5566,7 @@ function create_if_block(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(__vitePreload(() => import('./Window.js'),true?["Window.js","Window.css","node_modules/svelte@3.53.1.js","node_modules/@neodrag_svelte@1.2.4.js","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js"]:void 0,import.meta.url), info);
+	handle_promise(__vitePreload(() => import('./Window.js'),true?["Window.js","Window.css","node_modules/svelte@3.53.1.js","node_modules/@neodrag_svelte@1.2.4.js","node_modules/svelte-local-storage-store@0.3.1_svelte@3.53.1.js","node_modules/feathericon@1.0.2.js","node_modules/popmotion@11.0.5.js","node_modules/style-value-types@5.1.2.js","node_modules/hey-listen@1.0.8.js","node_modules/date-fns@2.29.3.js","node_modules/browserfs@1.4.3.js","node_modules/pify@6.1.0.js"]:void 0,import.meta.url), info);
 
 	return {
 		c() {
@@ -5936,6 +5968,78 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
+	globalThis.icons = appIcon;
+	const BrowserFS = pify(_BrowserFS);
+
+	// Installs globals onto window:
+	// * Buffer
+	// * require (monkey-patches if already defined)
+	// * process
+	// You can pass in an arbitrary object if you do not wish to pollute
+	// the global namespace.
+	BrowserFS.install(globalThis);
+
+	let fs;
+
+	/*
+// @ts-ignore Property 'fs' does not exist on type
+const fs: typeof import("fs") = globalThis.fs;
+*/
+	(async () => {
+		// TODO pify + async
+		await BrowserFS.configure({
+			fs: "MountableFileSystem",
+			options: {
+				"/": {
+					fs: "IndexedDB",
+					// fix: TypeError: Cannot read properties of undefined (reading 'storeName') 
+					// https://github.com/jvilk/BrowserFS/issues/336
+					options: {}
+				},
+				"/tmp": { fs: "InMemory" }
+			}
+		});
+
+		fs = require("fs");
+		fs.promises = pify(fs);
+
+		// @ts-ignore Property 'fs' does not exist on type
+		globalThis.fs = fs;
+
+		// TODO implement recursive mkdir in browserfs
+		//await fs.promises.mkdir("/home/user", { recursive: true });
+		try {
+			await fs.promises.mkdir("/home");
+		} catch(_) {
+			
+		}
+
+		try {
+			await fs.promises.mkdir("/home/user");
+		} catch(_) {
+			
+		}
+
+		// demo: write file
+		await fs.promises.writeFile('/home/user/test.txt', 'Cool, I can do this in the browser!');
+	})(); /*
+// demo: read file
+var str = (await fs.promises.readFile('/test.txt', 'utf8'));
+console.log("str", str);
+
+(async () => { var str = (await fs.promises.readFile('/test.txt', 'utf8')); console.log("str", str); })();
+
+var str = (await fs.promises.readFile('/test.txt')).toString();
+console.log("str", str);
+
+var buf = (await fs.promises.readFile('/test.txt'));
+console.log("buf", buf);
+
+// demo: read dir
+var dir = (await fs.promises.readdir('/'));
+console.log("dir", dir);
+*/
+
 	let mainEl;
 
 	function div_binding($$value) {
